@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import {Link, animatedScroll as scroller} from 'react-scroll'
+import './NavBar.css'
 
 class NavBar extends Component {
   state = {};
@@ -22,34 +24,40 @@ class NavBar extends Component {
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#">
-                Início <span class="sr-only">(current)</span>
-              </a>
+              <NavLink to="" label="Início"/>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                Quem somos
-              </a>
+              <NavLink to="about" label="Quem somos"/>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                Notícias
-              </a>
+              <NavLink to="" label="Notícias"/>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                Projetos
-              </a>
+              <NavLink to="" label="Projetos"/>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                Contato
-              </a>
+              <NavLink to="" label="Contato"/>
             </li>
           </ul>
         </div>
       </nav>
     );
+  }
+}
+
+/**
+ * Ao criar um NavLink é necessário especificar
+ * o 'to' e o 'label', que serão utilizados para
+ * direcionar o smooth scrolling e definir o texto
+ * a ser exibido, respectivamente.
+ */
+class NavLink extends React.Component{
+  render(){
+    return(
+      <Link class="nav-element" to={this.props.to} smooth={true}>
+        <a class="nav-link">{this.props.label}</a>
+      </Link>
+    )
   }
 }
 

@@ -1,0 +1,15 @@
+import React, {Component} from 'react'
+import Element from './Element.js'
+
+class AboutElement extends Element{
+    getChildren(){
+        return(
+            <div>
+                <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+                <p>Cras eget imperdiet lectus. Suspendisse tincidunt lorem eu dolor iaculis, a accumsan ipsum vulputate. Maecenas pellentesque, mauris in semper commodo, nisi arcu pharetra sapien, nec aliquet libero eros ut metus. Duis ultricies elit et justo tristique, quis ultricies tortor ultrices. Vestibulum at sodales lacus. Quisque semper eros maximus lectus molestie ultricies. Maecenas facilisis dictum vulputate. Ut feugiat molestie ornare. Suspendisse rutrum sodales vehicula. In sit amet sem ligula. Fusce pulvinar enim urna, eget posuere justo scelerisque id. Phasellus egestas sapien a sem dignissim sagittis. Donec turpis lacus, sodales facilisis risus ac, porta pharetra elit. Quisque suscipit ligula non quam pellentesque, in porta risus mattis. Fusce blandit nulla nec faucibus bibendum. Proin porttitor in orci a efficitur. Maecenas elit enim, hendrerit vel mi sit amet, lobortis sollicitudin augue. Aliquam elit ipsum, sodales quis velit at, vulputate consectetur magna. Curabitur viverra tellus ac velit pharetra tincidunt. Curabitur porttitor sit amet enim sed molestie. Nullam velit est, rhoncus a mi nec, aliquam cursus turpis. Quisque in semper nisi. Donec porta ligula ac sapien porta, vitae vehicula mauris tempus. Suspendisse placerat quis odio vitae bibendum. Mauris id tempus neque. Ut non diam sit amet lacus convallis pulvinar convallis vitae dolor. Curabitur auctor metus sit amet ornare pulvinar. Nunc efficitur nisi eu lorem euismod congue. Nunc lacinia sem sed diam porta, vitae volutpat leo fermentum. Mauris non semper mauris, ut fermentum orci. Nunc volutpat, quam id commodo finibus, quam mi rhoncus ipsum, non consequat neque purus vitae est. Suspendisse quis metus imperdiet, cursus augue sed, fermentum lacus. Pellentesque dignissim odio et libero suscipit mattis. Nam porttitor felis sit amet diam dignissim cursus. Nullam vestibulum rhoncus venenatis. Phasellus nec pharetra sem, nec venenatis felis. Phasellus vehicula lacus convallis commodo volutpat. Nam faucibus velit dolor, molestie gravida justo aliquet sit amet. Ut eleifend turpis odio, at molestie turpis ultricies in. Mauris fringilla odio nec dapibus lacinia. Cras eget justo et risus interdum bibendum non ut mi. Phasellus bibendum magna vel mi dignissim, ut pretium metus dapibus. Vivamus eget dolor dolor. Morbi vel ex ac lectus pulvinar auctor et a lacus. Fusce eu dictum velit. Nunc et lacus vitae odio volutpat tempus. Mauris a sem in purus pulvinar tincidunt. Nulla facilisi. Quisque rhoncus facilisis enim a vehicula. Mauris scelerisque tincidunt ultrices. Sed fermentum sed sapien vel ullamcorper. Quisque commodo in turpis vitae rutrum.</p>
+            </div>
+        )
+    }
+}
+
+export default AboutElement

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./Carousel.css";
-import bg from "./images/bg-1.jpg";
-import bg2 from "./images/bg-2.jpg";
-import bg3 from "./images/bg-3.jpg";
+import bg  from "../images/bg-1.jpg";
+import bg2 from "../images/bg-2.jpg";
+import bg3 from "../images/bg-3.jpg";
 
 class Carousel extends Component {
   state = {};

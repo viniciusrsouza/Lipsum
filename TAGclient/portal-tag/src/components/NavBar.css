@@ -1,0 +1,7 @@
+.nav-element:hover{
+    cursor: pointer;
+}
+
+.navbar{
+    position: fixed;
+}

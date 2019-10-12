@@ -1,31 +1,35 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import NavBar from "./NavBar.js";
-import Carousel from "./Carousel.js";
+import NavBar from "./components/NavBar.js";
+import Carousel from "./components/Carousel.js";
+import Element from './components/elements/Element'
+import AboutElement from './components/elements/AboutElement.js'
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <Carousel />
-
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Body/>
     </div>
   );
+}
+
+/**
+ * Elementos deverão ser inseridos aqui
+ * dentro de tags <Element> passando seu label
+ * para funcionarem com o smooth scroll
+ */
+function Body(){
+  return(
+    <div>
+      <NavBar/>
+      <Element id="carousel">
+        <Carousel/>
+      </Element>
+      <Element id="about">
+        <AboutElement/>
+      </Element>
+    </div>
+  )
 }
 
 export default App;
