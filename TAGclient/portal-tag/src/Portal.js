@@ -94,7 +94,7 @@ class NavWrapper extends Component{
     render(){
         return(
             <div>
-                <Navbar bg="dark" variant="dark">
+                <Navbar bg="dark" variant="dark" sticy="bottom">
                     <Navbar.Brand onClick={scroll.scrollToTop()}> TAG </Navbar.Brand>
                     <Nav className="mr-auto">
                     <NavLink to="inicio" label="Início"/>
