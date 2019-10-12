@@ -2,13 +2,14 @@ import React from "react";
 import "./App.css";
 import NavBar from "./components/NavBar.js";
 import Carousel from "./components/Carousel.js";
-import Element from './components/elements/Element'
-import AboutElement from './components/elements/AboutElement.js'
+import Element from "./components/elements/Element";
+import AboutElement from "./components/elements/AboutElement.js";
+import QuemSomos from "./components/QuemSomos";
 
 function App() {
   return (
     <div className="App">
-      <Body/>
+      <Body />
     </div>
   );
 }
@@ -18,18 +19,21 @@ function App() {
  * dentro de tags <Element> passando seu label
  * para funcionarem com o smooth scroll
  */
-function Body(){
-  return(
+function Body() {
+  return (
     <div>
-      <NavBar/>
+      <NavBar />
       <Element id="carousel">
-        <Carousel/>
+        <Carousel />
+      </Element>
+      <Element id="quemsomos">
+        <QuemSomos />
       </Element>
       <Element id="about">
-        <AboutElement/>
+        <AboutElement />
       </Element>
     </div>
-  )
+  );
 }
 
 export default App;

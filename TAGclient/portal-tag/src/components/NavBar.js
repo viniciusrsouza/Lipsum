@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import {Link, animatedScroll as scroller} from 'react-scroll'
-import './NavBar.css'
+import { Link, animatedScroll as scroller } from "react-scroll";
+import "./NavBar.css";
 
 class NavBar extends Component {
   state = {};
@@ -24,19 +24,22 @@ class NavBar extends Component {
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <NavLink to="" label="Início"/>
+              <NavLink to="" label="Início" />
             </li>
             <li class="nav-item">
-              <NavLink to="about" label="Quem somos"/>
+              <NavLink to="about" label="Quem somos" />
             </li>
             <li class="nav-item">
-              <NavLink to="" label="Notícias"/>
+              <NavLink to="" label="Notícias" />
             </li>
             <li class="nav-item">
-              <NavLink to="" label="Projetos"/>
+              <NavLink to="" label="Projetos" />
             </li>
             <li class="nav-item">
-              <NavLink to="" label="Contato"/>
+              <NavLink to="" label="Eventos" />
+            </li>
+            <li class="nav-item">
+              <NavLink to="" label="Contato" />
             </li>
           </ul>
         </div>
@@ -51,13 +54,13 @@ class NavBar extends Component {
  * direcionar o smooth scrolling e definir o texto
  * a ser exibido, respectivamente.
  */
-class NavLink extends React.Component{
-  render(){
-    return(
+class NavLink extends React.Component {
+  render() {
+    return (
       <Link class="nav-element" to={this.props.to} smooth={true}>
         <a class="nav-link">{this.props.label}</a>
       </Link>
-    )
+    );
   }
 }
 
