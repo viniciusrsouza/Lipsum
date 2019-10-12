@@ -6,11 +6,12 @@ import Element from './components/elements/Element'
 import AboutElement from './components/elements/AboutElement.js'
 import ProjectElement from "./components/elements/ProjectsElement";
 import TeamElement from "./components/elements/TeamElement";
+import QuemSomos from "./components/QuemSomos";
 
 function App() {
   return (
     <div className="App">
-      <Body/>
+      <Body />
     </div>
   );
 }
@@ -25,10 +26,13 @@ function Body(){
     <div className="Body">
       <NavBar/>
       <Element id="carousel">
-        <Carousel/>
+        <Carousel />
+      </Element>
+      <Element id="quemsomos">
+        <QuemSomos />
       </Element>
       <Element id="about">
-        <AboutElement/>
+        <AboutElement />
       </Element>
       <Element id="projects">
         <ProjectElement/>
@@ -37,7 +41,7 @@ function Body(){
         <TeamElement/>
       </Element>
     </div>
-  )
+  );
 }
 
 export default App;

@@ -27,10 +27,10 @@ class NavBar extends Component {
               <NavLink to="carousel" label="Início"/>
             </li>
             <li class="nav-item">
-              <NavLink to="about" label="Quem somos"/>
+              <NavLink to="about" label="Quem somos" />
             </li>
             <li class="nav-item">
-              <NavLink to="" label="Notícias"/>
+              <NavLink to="" label="Notícias" />
             </li>
             <li class="nav-item">
               <NavLink to="projects" label="Projetos"/>
@@ -39,7 +39,10 @@ class NavBar extends Component {
               <NavLink to="team" label="Equipe"/>
             </li>
             <li class="nav-item">
-              <NavLink to="" label="Contato"/>
+              <NavLink to="" label="Eventos" />
+            </li>
+            <li class="nav-item">
+              <NavLink to="" label="Contato" />
             </li>
           </ul>
         </div>
@@ -54,13 +57,13 @@ class NavBar extends Component {
  * direcionar o smooth scrolling e definir o texto
  * a ser exibido, respectivamente.
  */
-class NavLink extends React.Component{
-  render(){
-    return(
+class NavLink extends React.Component {
+  render() {
+    return (
       <Link class="nav-element" to={this.props.to} smooth={true}>
         <a class="nav-link">{this.props.label}</a>
       </Link>
-    )
+    );
   }
 }
 
