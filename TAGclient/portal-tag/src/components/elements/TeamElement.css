@@ -1,0 +1,15 @@
+.team-card{
+    display: flex;
+    flex-direction: column;
+    width: 384px;
+    margin: 0 auto;
+}
+
+.team-card>img{
+    border-radius: 200px;
+}
+
+.team-cards{
+    display: flex;
+    flex-direction: row;
+}

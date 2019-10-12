@@ -4,6 +4,8 @@ import NavBar from "./components/NavBar.js";
 import Carousel from "./components/Carousel.js";
 import Element from './components/elements/Element'
 import AboutElement from './components/elements/AboutElement.js'
+import ProjectElement from "./components/elements/ProjectsElement";
+import TeamElement from "./components/elements/TeamElement";
 
 function App() {
   return (
@@ -20,13 +22,19 @@ function App() {
  */
 function Body(){
   return(
-    <div>
+    <div className="Body">
       <NavBar/>
       <Element id="carousel">
         <Carousel/>
       </Element>
       <Element id="about">
         <AboutElement/>
+      </Element>
+      <Element id="projects">
+        <ProjectElement/>
+      </Element>
+      <Element id="team">
+        <TeamElement/>
       </Element>
     </div>
   )

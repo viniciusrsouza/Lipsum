@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import {Link, animatedScroll as scroller} from 'react-scroll'
+import {Link, animateScroll as scroller} from 'react-scroll'
 import './NavBar.css'
 
 class NavBar extends Component {
   state = {};
   render() {
     return (
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" onClick={scroller.scrollToTop()}>
           TAG
         </a>
         <button
@@ -24,7 +24,7 @@ class NavBar extends Component {
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <NavLink to="" label="Início"/>
+              <NavLink to="carousel" label="Início"/>
             </li>
             <li class="nav-item">
               <NavLink to="about" label="Quem somos"/>
@@ -33,7 +33,10 @@ class NavBar extends Component {
               <NavLink to="" label="Notícias"/>
             </li>
             <li class="nav-item">
-              <NavLink to="" label="Projetos"/>
+              <NavLink to="projects" label="Projetos"/>
+            </li>
+            <li class="nav-item">
+              <NavLink to="team" label="Equipe"/>
             </li>
             <li class="nav-item">
               <NavLink to="" label="Contato"/>

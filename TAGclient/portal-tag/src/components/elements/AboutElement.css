@@ -1,0 +1,12 @@
+.about-container{
+    display: flex;
+    flex-direction: row;
+}
+.about-container>div{
+    width: 384px;
+    margin: auto;
+}
+
+.about-media>*{
+    margin-bottom: 20px;
+}
