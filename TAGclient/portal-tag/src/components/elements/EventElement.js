@@ -1,16 +1,20 @@
-import React from "react";
-import Element from "./Element.js";
+import React, { Component } from "react";
 import image from "../../images/using-notebook.png";
-import "./AboutElement.css";
+import "./EventElement.css";
 
-class AboutElement extends Element {
-  getChildren() {
+class EventElement extends Component {
+  state = {};
+  render() {
     return (
       <div>
         <div class="row featurette">
+          <div class="col-md-5">
+            <img src={image} width="100%"></img>
+          </div>
           <div class="col-md-7">
             <h2 class="featurette-heading">
-              Quem somos. <span class="text-muted">Saiba mais sobre nós.</span>
+              Eventos.{" "}
+              <span class="text-muted">Saiba sobre nossas participações.</span>
             </h2>
             <p class="lead">
               Breve descrição da empresa definida pelo cliente. ex: We're a
@@ -18,13 +22,10 @@ class AboutElement extends Element {
               drive for technology...
             </p>
           </div>
-          <div class="col-md-5">
-            <img src={image} width="100%"></img>
-          </div>
         </div>
       </div>
     );
   }
 }
 
-export default AboutElement;
+export default EventElement;

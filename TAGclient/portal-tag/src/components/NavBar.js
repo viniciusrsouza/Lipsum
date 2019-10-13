@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import {Link, animateScroll as scroller} from 'react-scroll'
-import './NavBar.css'
+import { Link, animateScroll as scroller } from "react-scroll";
+import "./NavBar.css";
 
 class NavBar extends Component {
   state = {};

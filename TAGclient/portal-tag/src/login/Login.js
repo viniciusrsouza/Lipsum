@@ -4,14 +4,14 @@ import LoginCard from './LoginCard'
 import sha1 from 'crypto-js/sha1'
 import {authenticate} from '../utils'
 
-class Login extends React.Component{
-    render(){
-        return(
-            <div>
-                <LoginCard onClick={this.onLogin}/>
-            </div>
-        )
-    }
+class Login extends React.Component {
+  render() {
+    return (
+      <div>
+        <LoginCard onClick={this.onLogin} />
+      </div>
+    );
+  }
 
     onLogin(){
         const emailElement = document.getElementById('email')
@@ -23,4 +23,4 @@ class Login extends React.Component{
     }
 }
 
-export default Login
+export default Login;
