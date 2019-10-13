@@ -34,3 +34,7 @@ export async function getUserFromSession(session, cb){
     if(session == adminSession) return cb(logUser(true))
     else return cb(logUser(false))
 }
+
+export function isAdmin(){
+    return localStorage.getItem('session-id').isAdmin
+}

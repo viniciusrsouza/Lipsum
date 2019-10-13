@@ -1,29 +1,21 @@
 import React from 'react'
+import './GenRegister.css'
 import image from '../images/icon_user.png'
-import { getUserFromSession, getSession } from '../utils'
 
-class Register extends React.Component{
-    constructor(props){
-        getUserFromSession(getSession(), (user) => {
-            if(user.isAdmin){
-                super(props)
-            }
-            else window.location.href = '/'
-        })
-    }
-    onClickRegister(){
+class GenRegister extends React.Component{
+    onClickGenRegister(){
         
     }
     render(){
         return(
             <div>
-                <RegisterCard onClick={this.onClickRegister}/>
+                <GenRegisterCard onClick={this.onClickGenRegister}/>
             </div>
         )
     }
 }
 
-class RegisterCard extends React.Component{
+class GenRegisterCard extends React.Component{
     render(){
         return(
             <div class="wrapper">
@@ -41,4 +33,4 @@ class RegisterCard extends React.Component{
     }
 }
 
-export default Register
+export default GenRegister

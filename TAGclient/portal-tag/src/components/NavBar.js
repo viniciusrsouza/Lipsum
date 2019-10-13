@@ -1,15 +1,24 @@
 import React, { Component } from "react";
 import { Link, animateScroll as scroller } from "react-scroll";
 import "./NavBar.css";
+import { signout } from "../utils";
 
 class NavBar extends Component {
   state = {};
+
+  onClickLogout(){
+    signout(() => {
+      window.location.href='/'
+    })
+  }
+
   render() {
     let session = this.props.session
     console.log(session)
     const tag = session?
     <p>
       Olá, {`${session}`}
+      <button className="btn btn-outline-dark my-sm-0" onClick={this.onClickLogout}>logout</button>
     </p>
     :
     <a className="btn btn-outline-dark my-sm-0" 
