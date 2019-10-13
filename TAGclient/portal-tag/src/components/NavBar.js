@@ -22,7 +22,7 @@ class NavBar extends Component {
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <NavLink to="carousel" label="Início"/>
             </li>
@@ -45,6 +45,10 @@ class NavBar extends Component {
               <NavLink to="" label="Contato" />
             </li>
           </ul>
+          <a class="btn btn-outline-dark my-sm-0" 
+            href='/login'>
+              Login
+          </a>
         </div>
       </nav>
     );
