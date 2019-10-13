@@ -18,10 +18,15 @@ class Register extends RestrictComponent{
             grade: document.getElementById('grade').value,
             lattes: document.getElementById('lattes').value
         }
-        if(!validPassword(user)){
+        if(hasEmptyFields(user)){
+            window.alert('Preencha os campos vazios')
+        }
+        else if(!validPassword(user)){
             window.alert('Senha não é válida')
         }else if(!validator.isEmail(user.email)){
             window.alert('Email não é válido')
+        }else if(!validator.isURL(user.lattes)){
+            window.alert('Link do lattes não é um URL válido')
         }
         window.alert(JSON.stringify(user))
     }
@@ -33,6 +38,12 @@ class Register extends RestrictComponent{
             </div>
         )
     }
+}
+
+function hasEmptyFields(user){
+    for(let key in user){
+        if(!user[key]) return true
+    }return document.getElementById('confirm-password').value === ''
 }
 
 function validPassword(user){
