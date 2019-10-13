@@ -1,8 +1,9 @@
 import React from 'react'
 import './GenRegister.css'
 import image from '../images/icon_user.png'
+import AdminComponent from './AdminComponent'
 
-class GenRegister extends React.Component{
+class GenRegister extends AdminComponent{
     onClickGenRegister(){
         
     }
@@ -18,14 +19,14 @@ class GenRegister extends React.Component{
 class GenRegisterCard extends React.Component{
     render(){
         return(
-            <div class="wrapper">
+            <div className="wrapper">
                 <div id="formContent">
-                    <div class="first">
+                    <div className="first">
                     <img src={image} id="icon" alt="User Icon" />
                     </div>
                     <form>
-                    <input type="text" id="name" class="login-form second" name="email" placeholder="email"/>
-                    <input type="button" class="login-button fourth" value="Send register link" onClick={this.props.onClick}/>
+                    <input type="text" id="name" className="login-form second" name="email" placeholder="email"/>
+                    <input type="button" className="login-button fourth" value="Send register link" onClick={this.props.onClick}/>
                     </form>
                 </div>
             </div>
