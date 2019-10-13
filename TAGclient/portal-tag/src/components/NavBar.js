@@ -5,13 +5,24 @@ import './NavBar.css'
 class NavBar extends Component {
   state = {};
   render() {
+    let session = this.props.session
+    console.log(session)
+    const tag = session?
+    <p>
+      Olá, {`${session}`}
+    </p>
+    :
+    <a className="btn btn-outline-dark my-sm-0" 
+        href='/login'>
+      Login
+    </a>
     return (
-      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" onClick={scroller.scrollToTop()}>
+      <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <a className="navbar-brand" onClick={scroller.scrollToTop()}>
           TAG
         </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarNavDropdown"
@@ -19,36 +30,33 @@ class NavBar extends Component {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+        <div className="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item active">
               <NavLink to="carousel" label="Início"/>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink to="about" label="Quem somos" />
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink to="" label="Notícias" />
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink to="projects" label="Projetos"/>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink to="team" label="Equipe"/>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink to="" label="Eventos" />
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <NavLink to="" label="Contato" />
             </li>
           </ul>
-          <a class="btn btn-outline-dark my-sm-0" 
-            href='/login'>
-              Login
-          </a>
+          {tag}
         </div>
       </nav>
     );
@@ -64,8 +72,8 @@ class NavBar extends Component {
 class NavLink extends React.Component {
   render() {
     return (
-      <Link class="nav-element" to={this.props.to} smooth={true}>
-        <a class="nav-link">{this.props.label}</a>
+      <Link className="nav-element" to={this.props.to} smooth={true}>
+        <a className="nav-link">{this.props.label}</a>
       </Link>
     );
   }

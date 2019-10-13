@@ -9,9 +9,10 @@ import TeamElement from "./components/elements/TeamElement";
 import QuemSomos from "./components/QuemSomos";
 
 function App() {
+  let session = localStorage.getItem('session-id')
   return (
     <div className="App">
-      <Body />
+      <Body session={session}/>
     </div>
   );
 }
@@ -21,10 +22,10 @@ function App() {
  * dentro de tags <Element> passando seu label
  * para funcionarem com o smooth scroll
  */
-function Body(){
+function Body(props){
   return(
     <div className="Body">
-      <NavBar/>
+      <NavBar session={props.session}/>
       <Element id="carousel">
         <Carousel />
       </Element>
