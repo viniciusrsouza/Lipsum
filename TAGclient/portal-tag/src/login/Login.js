@@ -17,7 +17,7 @@ class Login extends React.Component{
         const passwordElement = document.getElementById('password')
         const email = emailElement.value
         const password = sha1(passwordElement.value)
-        window.alert(`email= ${email}\npassword= ${password}`)
+        window.alert(`email= ${email}\npassword= ${sha1(password)}`)
     }
 }
 
