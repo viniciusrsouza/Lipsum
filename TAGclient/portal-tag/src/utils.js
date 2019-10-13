@@ -24,16 +24,16 @@ export async function signout(cb){
     localStorage.removeItem('session-id')
     return cb()
 }
-
-export async function getSession(cb){
-    return cb(localStorage.getItem('session-id'))
-}
-
 export async function getUserFromSession(session, cb){
     const adminSession = sha1('lipsumbcc@gmail.com' + sha1('engenharia'))
     if(session == adminSession) return cb(logUser(true))
     else return cb(logUser(false))
 }
+
+export function getSession(cb){
+    return cb(localStorage.getItem('session-id'))
+}
+
 
 export function isAdmin(){
     return localStorage.getItem('session-id').isAdmin
