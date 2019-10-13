@@ -6,8 +6,8 @@ import Element from "./components/elements/Element";
 import AboutElement from "./components/elements/AboutElement.js";
 import ProjectElement from "./components/elements/ProjectsElement";
 import TeamElement from "./components/elements/TeamElement";
-import QuemSomos from "./components/QuemSomos";
-import Marketing from "./components/Marketing.js";
+import EventElement from "./components/elements/EventElement";
+import ContactElement from "./components/elements/ContactElement";
 
 function App() {
   return (
@@ -29,16 +29,28 @@ function Body() {
       <Element id="carousel">
         <Carousel />
       </Element>
+      <hr class="featurette-divider"></hr>
       <main>
         <Element id="about">
           <AboutElement />
         </Element>
+        <hr class="featurette-divider"></hr>
+        <Element id="events">
+          <EventElement />
+        </Element>
+        <hr class="featurette-divider"></hr>
         <Element id="projects">
           <ProjectElement />
         </Element>
+        <hr class="featurette-divider"></hr>
         <Element id="team">
           <TeamElement />
         </Element>
+        <hr class="featurette-divider"></hr>
+        <Element id="contact">
+          <ContactElement />
+        </Element>
+        <hr class="featurette-divider"></hr>
       </main>
     </div>
   );

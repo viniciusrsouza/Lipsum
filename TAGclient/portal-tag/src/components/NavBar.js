@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import {Link, animateScroll as scroller} from 'react-scroll'
-import './NavBar.css'
+import { Link, animateScroll as scroller } from "react-scroll";
+import "./NavBar.css";
 
 class NavBar extends Component {
   state = {};
@@ -24,30 +24,26 @@ class NavBar extends Component {
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <NavLink to="carousel" label="Início"/>
+              <NavLink to="carousel" label="Início" />
             </li>
             <li class="nav-item">
               <NavLink to="about" label="Quem somos" />
             </li>
             <li class="nav-item">
-              <NavLink to="" label="Notícias" />
+              <NavLink to="events" label="Eventos" />
             </li>
             <li class="nav-item">
-              <NavLink to="projects" label="Projetos"/>
+              <NavLink to="projects" label="Projetos" />
             </li>
             <li class="nav-item">
-              <NavLink to="team" label="Equipe"/>
+              <NavLink to="team" label="Equipe" />
             </li>
             <li class="nav-item">
-              <NavLink to="" label="Eventos" />
-            </li>
-            <li class="nav-item">
-              <NavLink to="" label="Contato" />
+              <NavLink to="contact" label="Contato" />
             </li>
           </ul>
-          <a class="btn btn-outline-dark my-sm-0" 
-            href='/login'>
-              Login
+          <a class="btn btn-outline-dark my-sm-0" href="/login">
+            Login
           </a>
         </div>
       </nav>
