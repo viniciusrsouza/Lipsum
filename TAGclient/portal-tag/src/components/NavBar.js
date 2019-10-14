@@ -2,32 +2,38 @@ import React, { Component } from "react";
 import { Link, animateScroll as scroller } from "react-scroll";
 import "./NavBar.css";
 import { signout } from "../utils";
+import logo from "../images/logo2.png";
 
 class NavBar extends Component {
   state = {};
 
-  onClickLogout(){
+  onClickLogout() {
     signout(() => {
-      window.location.href='/'
-    })
+      window.location.href = "/";
+    });
   }
 
   render() {
-    let session = this.props.session
-    console.log(session)
-    const tag = session?
-    <p>
-      Olá, {`${session}`}
-      <button className="btn btn-outline-dark my-sm-0" onClick={this.onClickLogout}>logout</button>
-    </p>
-    :
-    <a className="btn btn-outline-dark my-sm-0" 
-        href='/login'>
-      Login
-    </a>
+    let session = this.props.session;
+    console.log(session);
+    const tag = session ? (
+      <p>
+        Olá, {`${session}`}
+        <button
+          className="btn btn-outline-dark my-sm-0"
+          onClick={this.onClickLogout}
+        >
+          logout
+        </button>
+      </p>
+    ) : (
+      <a className="btn btn-outline-dark my-sm-0" href="/login">
+        Login
+      </a>
+    );
     return (
       <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" onClick={scroller.scrollToTop()}>
+        <a class="navbar-brand" href="#">
           TAG
         </a>
         <button
@@ -44,7 +50,7 @@ class NavBar extends Component {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <NavLink to="carousel" label="Início"/>
+              <NavLink to="carousel" label="Início" />
             </li>
             <li className="nav-item">
               <NavLink to="about" label="Quem somos" />
@@ -53,10 +59,10 @@ class NavBar extends Component {
               <NavLink to="" label="Notícias" />
             </li>
             <li className="nav-item">
-              <NavLink to="projects" label="Projetos"/>
+              <NavLink to="projects" label="Projetos" />
             </li>
             <li className="nav-item">
-              <NavLink to="team" label="Equipe"/>
+              <NavLink to="team" label="Equipe" />
             </li>
             <li className="nav-item">
               <NavLink to="" label="Eventos" />
