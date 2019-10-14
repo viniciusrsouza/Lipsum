@@ -1,13 +1,19 @@
 import React from "react";
 import "./LoginCard.css";
-import image from "../images/icon_user.png";
+import logo from "../images/logo2.png";
 
 class LoginCard extends React.Component {
   render() {
     return (
       <div class="text-center">
         <form class="form-signin">
-          <img class="mb-4" src={image} alt="" width="72" height="72"></img>
+          <img
+            class="mb-4 img-fluid"
+            src={logo}
+            alt=""
+            width="148"
+            height="148"
+          ></img>
           <h1 class="h3 mb-3 font-weigth-normal">
             Por favor, preencha os campos abaixo
           </h1>

@@ -1,6 +1,6 @@
 import React from "react";
 import Element from "./Element.js";
-import image from "../../images/using-notebook.png";
+import logo from "../../images/logo2.png";
 import "./AboutElement.css";
 
 class AboutElement extends Element {
@@ -19,7 +19,7 @@ class AboutElement extends Element {
             </p>
           </div>
           <div class="col-md-5">
-            <img src={image} width="100%"></img>
+            <img src={logo} width="100%"></img>
           </div>
         </div>
       </div>
