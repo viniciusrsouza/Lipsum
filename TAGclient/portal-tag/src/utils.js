@@ -9,11 +9,11 @@ export const endpoints = {
         method: 'POST',
         path: '/login'
     },
-    register = {
+    register: {
         method: 'POST',
         path: '/register'
     },
-    user = {
+    user: {
         method: 'GET',
         path: '/user'
     },
