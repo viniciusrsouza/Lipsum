@@ -1,5 +1,24 @@
 import sha1 from 'crypto-js/sha1'
 
+export const server = {
+    url: 'http://localhost.com/3100'
+}
+
+export const endpoints = {
+    login: {
+        method: 'POST',
+        path: '/login'
+    },
+    register = {
+        method: 'POST',
+        path: '/register'
+    },
+    user = {
+        method: 'GET',
+        path: '/user'
+    },
+}
+
 // função para debug
 export function logUser(isAdmin){
     return isAdmin?

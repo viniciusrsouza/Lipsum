@@ -62,7 +62,7 @@ class NavBar extends Component {
               <NavLink to="" label="Eventos" />
             </li>
             <li className="nav-item">
-              <NavLink to="" label="Contato" />
+              <NavLink to="contact" label="Contato" />
             </li>
           </ul>
           {tag}
