@@ -4,31 +4,45 @@ import RestrictComponent from "./RestrictComponent";
 import validator from "validator";
 import PasswordValidator from "password-validator";
 import logo from "../images/logo2.png";
+import { sleep } from "../utils";
 
 class Register extends RestrictComponent {
   constructor(props) {
     super(props);
   }
+
   onClickRegister() {
-    const user = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      password: document.getElementById("password").value,
-      afilliation: document.getElementById("affiliation").value,
-      department: document.getElementById("dept").value,
-      grade: document.getElementById("grade").value,
-      lattes: document.getElementById("lattes").value
-    };
-    if (hasEmptyFields(user)) {
-      window.alert("Preencha os campos vazios");
-    } else if (!validPassword(user)) {
-      window.alert("Senha não é válida");
-    } else if (!validator.isEmail(user.email)) {
-      window.alert("Email não é válido");
-    } else if (!validator.isURL(user.lattes)) {
-      window.alert("Link do lattes não é um URL válido");
+    const fields = {
+      name: document.getElementById("name"),
+      email: document.getElementById("email"),
+      password: document.getElementById("password"),
+      confirmPassword: document.getElementById("confirm-password"),
+      afilliation: document.getElementById("affiliation"),
+      department: document.getElementById("dept"),
+      grade: document.getElementById("grade"),
+      lattes: document.getElementById("lattes")
     }
-    window.alert(JSON.stringify(user));
+
+    const user = {
+      name: fields.name.value,
+      email: fields.email.value,
+      password: fields.password.value,
+      afilliation: fields.afilliation.value,
+      department: fields.department.value,
+      grade: fields.grade.value,
+      lattes: fields.lattes.value
+    }
+
+    if (hasEmptyFields(user)) {
+      showAllErrors(fields)
+    } else if (!validPassword(user)) {
+      showError(fields.password)
+      showError(fields.confirmPassword)
+    } else if (!validator.isEmail(user.email)) {
+      showError(fields.email)
+    } else if (!validator.isURL(user.lattes)) {
+      showError(fields.lattes)
+    }
   }
 
   render() {
@@ -38,6 +52,23 @@ class Register extends RestrictComponent {
       </div>
     );
   }
+}
+
+async function showAllErrors(fields){
+  for(let key in fields){
+    showError(fields[key])
+  }
+}
+
+async function showError(element){
+  element.style.borderColor = 'red'
+  element.style.borderWidth = 1
+  element.style.borderStyle = 'solid'
+  element.onfocus = () => { clearError(element) }
+}
+
+async function clearError(element){
+  element.style.borderColor = ""
 }
 
 function hasEmptyFields(user) {
@@ -51,22 +82,13 @@ function validPassword(user) {
   if (user.password === document.getElementById("confirm-password").value) {
     var schema = new PasswordValidator();
     schema
-      .is()
-      .min(8)
-      .is()
-      .max(100)
-      .has()
-      .uppercase()
-      .has()
-      .lowercase()
-      .has()
-      .digits()
-      .has()
-      .not()
-      .spaces()
-      .is()
-      .not()
-      .oneOf([user.name, user.email]);
+      .is().min(8)
+      .is().max(32)
+      .has().uppercase()
+      .has().lowercase()
+      .has().digits()
+      .has().not().spaces()
+      .is().not().oneOf([user.name, user.email]);
     return schema.validate(user.password);
   }
   return false;
@@ -171,6 +193,7 @@ class RegisterCard extends React.Component {
           <button
             class="btn btn-primary"
             type="button"
+            id="register"
             value="Registrar"
             onClick={this.props.onClick}
           >

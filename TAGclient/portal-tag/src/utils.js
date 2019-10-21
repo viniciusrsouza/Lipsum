@@ -19,6 +19,12 @@ export const endpoints = {
     },
 }
 
+export function sleep(ms){
+    return new Promise(resolve=>{
+        setTimeout(resolve,ms)
+    })
+}
+
 // função para debug
 export function logUser(isAdmin){
     return isAdmin?
