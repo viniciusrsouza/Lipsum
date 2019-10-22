@@ -13,6 +13,9 @@ class TeamElement extends Element {
           <TeamCard />
           <TeamCard />
         </div>
+        <a class="btn btn-outline-info" href="#" role="button">
+          Ver toda a equipe
+        </a>
       </div>
     );
   }

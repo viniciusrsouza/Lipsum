@@ -50,13 +50,13 @@ class NavBar extends Component {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <NavLink to="carousel" label="Início" />
+              <NavLink to="news" label="Início" />
             </li>
             <li className="nav-item">
               <NavLink to="about" label="Quem somos" />
             </li>
             <li className="nav-item">
-              <NavLink to="" label="Notícias" />
+              <NavLink to="events" label="Eventos" />
             </li>
             <li className="nav-item">
               <NavLink to="projects" label="Projetos" />
@@ -65,10 +65,7 @@ class NavBar extends Component {
               <NavLink to="team" label="Equipe" />
             </li>
             <li className="nav-item">
-              <NavLink to="" label="Eventos" />
-            </li>
-            <li className="nav-item">
-              <NavLink to="" label="Contato" />
+              <NavLink to="contact" label="Contato" />
             </li>
           </ul>
           {tag}

@@ -3,7 +3,7 @@ import "./Carousel.css";
 import bg from "../images/bg-1.jpg";
 import bg2 from "../images/bg-2.jpg";
 import bg3 from "../images/bg-3.jpg";
-
+import "bootstrap/dist/css/bootstrap.min.css";
 class Carousel extends Component {
   state = {};
   render() {
@@ -17,7 +17,7 @@ class Carousel extends Component {
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src={bg}></img>
+              <img src={bg} class="d-block w-100" alt="First slide"></img>
               <div class="container">
                 <div class="carousel-caption text-left">
                   <h1>Example headline.</h1>
@@ -35,7 +35,7 @@ class Carousel extends Component {
               </div>
             </div>
             <div class="carousel-item">
-              <img src={bg2}></img>
+              <img src={bg2} class="d-block w-100" alt="Second slide"></img>
               <div class="container">
                 <div class="carousel-caption">
                   <h1>Another example headline.</h1>
@@ -53,7 +53,7 @@ class Carousel extends Component {
               </div>
             </div>
             <div class="carousel-item">
-              <img src={bg3}></img>
+              <img src={bg3} class="d-block w-100" alt="Third slide"></img>
               <div class="container">
                 <div class="carousel-caption text-right">
                   <h1>One more for good measure.</h1>

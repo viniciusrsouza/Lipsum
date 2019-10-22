@@ -21,11 +21,7 @@ class ContactElement extends Component {
             <h2 class="featurette-heading">
               Contato. <span class="text-muted">Como chegar até nós.</span>
             </h2>
-            <p class="lead">
-              Breve descrição da empresa definida pelo cliente. ex: We're a
-              group of passionate software testers in... with an enthusiastic
-              drive for technology...
-            </p>
+            <p class="lead">e-mail: lucas.albertins@gmail.com</p>
           </div>
         </div>
       </div>

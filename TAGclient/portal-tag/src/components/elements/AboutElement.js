@@ -13,9 +13,14 @@ class AboutElement extends Element {
               Quem somos. <span class="text-muted">Saiba mais sobre nós.</span>
             </h2>
             <p class="lead">
-              Breve descrição da empresa definida pelo cliente. ex: We're a
-              group of passionate software testers in... with an enthusiastic
-              drive for technology...
+              The TAG group aims to develop innovative approaches to support
+              testing in order to improve the quality and performance of the
+              testing process. The precise application of automation is one of
+              our cornerstones, which helps us to provide our partners with the
+              expected results. Our crew's diverse background allows us to give
+              feedback and to offer techniques to reach our goals. Therefore,
+              let us help you build an agile and efficient verification
+              environment.
             </p>
           </div>
           <div class="col-md-5">

@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import NavBar from "./components/NavBar.js";
 import Carousel from "./components/Carousel.js";
+import News from "./components/News.js";
 import Element from "./components/elements/Element";
 import AboutElement from "./components/elements/AboutElement.js";
 import ProjectElement from "./components/elements/ProjectsElement";
@@ -10,10 +11,10 @@ import EventElement from "./components/elements/EventElement";
 import ContactElement from "./components/elements/ContactElement";
 
 function App() {
-  let session = localStorage.getItem('session-id')
+  let session = localStorage.getItem("session-id");
   return (
     <div className="App">
-      <Body session={session}/>
+      <Body session={session} />
     </div>
   );
 }
@@ -23,12 +24,12 @@ function App() {
  * dentro de tags <Element> passando seu label
  * para funcionarem com o smooth scroll
  */
-function Body(props){
-  return(
+function Body(props) {
+  return (
     <div className="Body">
-      <NavBar session={props.session}/>
-      <Element id="carousel">
-        <Carousel />
+      <NavBar session={props.session} />
+      <Element id="news">
+        <News />
       </Element>
       <hr class="featurette-divider"></hr>
       <main>
