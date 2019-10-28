@@ -1,8 +1,8 @@
 import React from "react";
 import "./Login.css";
 import LoginCard from "./LoginCard";
-import sha1 from "crypto-js/sha1";
 import { authenticate } from "../utils";
+import { post, endpoints } from "../network/http-methods"
 
 class Login extends React.Component {
   render() {
@@ -20,13 +20,17 @@ class Login extends React.Component {
     const emailElement = document.getElementById("email");
     const passwordElement = document.getElementById("password");
     const email = emailElement.value;
-    const password = sha1(passwordElement.value).toString();
-    authenticate(sha1(email + password), () => {});
-    window.location.href = "/";
-  }
-
-  goBack() {
-    window.location.href = "/";
+    const password = passwordElement.value;
+    post(endpoints.login, {username:email, password:password}, (response) => {
+      if(response.token){
+        console.log(response)
+        authenticate(response.token, () => { window.location.href = "/" })
+      }else{ 
+        console.log(`failed to read response: ${response}`)
+      }
+    }, (error) => {
+      console.log(`error ${error}`)
+    })
   }
 }
 
