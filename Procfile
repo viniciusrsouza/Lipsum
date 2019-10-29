@@ -1,0 +1,1 @@
+web: cd TAGclient/portal-tag && npm i && npm start
