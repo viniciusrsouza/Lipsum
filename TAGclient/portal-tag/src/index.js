@@ -9,6 +9,7 @@ import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import submitProject from "./submitProject/submitProject";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -17,6 +18,7 @@ ReactDOM.render(
       <Route path="/login" exact={true} component={Login} />
       <Route path="/gen-register" component={GenRegister} />
       <Route path="/register" component={Register} />
+      <Route path="/submitProject" component={submitProject} />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
