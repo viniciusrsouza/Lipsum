@@ -51,22 +51,13 @@ function validPassword(user) {
   if (user.password === document.getElementById("confirm-password").value) {
     var schema = new PasswordValidator();
     schema
-      .is()
-      .min(8)
-      .is()
-      .max(100)
-      .has()
-      .uppercase()
-      .has()
-      .lowercase()
-      .has()
-      .digits()
-      .has()
-      .not()
-      .spaces()
-      .is()
-      .not()
-      .oneOf([user.name, user.email]);
+      .is().min(8)
+      .is().max(100)
+      .has().uppercase()
+      .has().lowercase()
+      .has().digits()
+      .has().not().spaces()
+      .is().not().oneOf([user.name, user.email]);
     return schema.validate(user.password);
   }
   return false;

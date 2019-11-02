@@ -1,7 +1,7 @@
 import React from "react";
 import "./Login.css";
 import LoginCard from "./LoginCard";
-import { authenticate } from "../utils";
+import { authenticate, validate } from "../utils";
 import { post, endpoints } from "../network/http-methods"
 
 class Login extends React.Component {
@@ -21,17 +21,30 @@ class Login extends React.Component {
     const passwordElement = document.getElementById("password");
     const email = emailElement.value;
     const password = passwordElement.value;
-    post(endpoints.login, {username:email, password:password}, (response) => {
-      if(response.token){
-        console.log(response)
-        authenticate(response.token, () => { window.location.href = "/" })
-      }else{ 
-        console.log(`failed to read response: ${response}`)
-      }
-    }, (error) => {
-      console.log(`error ${error}`)
-    })
+    let isValid = true
+    isValid = validate(email, emailElement) && isValid
+    isValid = validate(password, passwordElement) && isValid
+    
+    if(isValid){
+      post(endpoints.login, {username:email, password:password}, (response) => {
+        if(response.token){
+          console.log(response)
+          authenticate(response.token, email, () => { window.location.href = "/" })
+        }else{ 
+          console.log(`failed to read response: ${response}`)
+          if(response.non_field_errors){
+            credentialErrors()
+          }
+        }
+      }, (error) => {
+        console.log(`error ${error}`)
+      })
+    }
   }
 }
 
+//TODO alterar o alert para um aviso melhor
+function credentialErrors(){
+  window.alert("Credenciais inválidas")
+}
 export default Login;

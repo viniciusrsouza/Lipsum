@@ -9,9 +9,16 @@ import ProjectElement from "./components/elements/ProjectsElement";
 import TeamElement from "./components/elements/TeamElement";
 import EventElement from "./components/elements/EventElement";
 import ContactElement from "./components/elements/ContactElement";
+import { getUser } from "./utils";
 
 function App() {
-  let session = localStorage.getItem("session-id");
+  const currentUser = getUser();
+  console.log(currentUser)
+  let session
+  if(currentUser)
+    session = currentUser.nome
+  else session = undefined
+  console.log(session)
   return (
     <div className="App">
       <Body session={session} />

@@ -15,8 +15,8 @@ class NavBar extends Component {
 
   render() {
     let session = this.props.session;
-    console.log(session);
-    const tag = session ? (
+    console.log(session!==undefined);
+    const tag = session!==undefined ? (
       <p>
         Olá, {`${session}`}
         <button

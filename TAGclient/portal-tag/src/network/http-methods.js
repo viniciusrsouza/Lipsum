@@ -1,6 +1,7 @@
 export const root = "http://127.0.0.1:8000"
 export const endpoints = {
-    login:`${root}/login/`
+    login:`${root}/login/`,
+    users:`${root}/Usuario/`,
 }
 
 export async function get(url, params, callback, errorCallback){
@@ -11,7 +12,7 @@ export async function get(url, params, callback, errorCallback){
     const init={
         method: 'GET',
         headers: headers,
-        body: JSON.stringify(params)
+        params: JSON.stringify(params)
     }
     fetch(url, init).then(response => {
         console.log(response)

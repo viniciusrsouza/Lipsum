@@ -25,6 +25,7 @@ class LoginCard extends React.Component {
             id="email"
             class="form-control"
             placeholder="Email"
+            onFocus={ () => {document.getElementById('email').style.setProperty('border', '')} }
             required
             autofocus
           ></input>
@@ -37,6 +38,7 @@ class LoginCard extends React.Component {
             type="password"
             class="form-control"
             placeholder="Senha"
+            onFocus={ () => {document.getElementById('password').style.setProperty('border', '')} }
             required
           ></input>
           <p class="mt-3 mb-3 text-muted">
