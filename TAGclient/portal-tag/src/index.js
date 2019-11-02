@@ -22,7 +22,7 @@ ReactDOM.render(
       <Route path="/register" component={Register} />
       <Route path="/ProjectsPage" component={ProjectsPage} />
       <Route path="/submitProject" component={submitProject} />
-      <Route path="/PageProject" component={PageProject} />
+      <Route path="/PageProject/:projectId" component={PageProject} />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

@@ -64,8 +64,7 @@ class submitProject extends Component {
     fetch(endpoints.projects, {
       method: 'POST',
       body: data
-    }).then(response => console.log(response))
-    window.location.href = "/ProjectsPage"
+    }).then(response => window.location.href = "/ProjectsPage")
   }
 
   render() {

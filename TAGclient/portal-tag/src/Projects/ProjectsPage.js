@@ -28,7 +28,7 @@ class ProjectsPage extends Component {
           <tr>
             <td>{id}</td>
             <td>
-              <a href="/PageProject">{titulo}</a>
+              <a href={`/PageProject/${id}`}>{titulo}</a>
             </td>
             <td>{"author"}</td>
             <td>{categoria}</td>
