@@ -9,7 +9,9 @@ import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import submitProject from "./submitProject/submitProject";
+import submitProject from "./Projects/submitProject";
+import ProjectsPage from "./Projects/ProjectsPage";
+import PageProject from "./Projects/PageProject";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -18,7 +20,9 @@ ReactDOM.render(
       <Route path="/login" exact={true} component={Login} />
       <Route path="/gen-register" component={GenRegister} />
       <Route path="/register" component={Register} />
+      <Route path="/ProjectsPage" component={ProjectsPage} />
       <Route path="/submitProject" component={submitProject} />
+      <Route path="/PageProject" component={PageProject} />
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

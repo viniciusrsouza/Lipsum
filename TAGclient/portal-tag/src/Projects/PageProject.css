@@ -1,0 +1,30 @@
+.individual {
+  margin: 0px 100px;
+}
+
+#cabeca {
+  margin-top: 75px;
+}
+
+#cabeca h1 {
+  text-align: center;
+  margin: 25px 0px;
+}
+
+#teste {
+  width: 100%;
+}
+
+#infoAdicional {
+  padding: 15px 0px 0px 25px;
+}
+
+#infoAdicional ul {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  list-style: none;
+}
+
+#text {
+  margin-top: 25px;
+}

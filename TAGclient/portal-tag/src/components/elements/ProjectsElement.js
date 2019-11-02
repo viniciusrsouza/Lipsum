@@ -13,7 +13,7 @@ class ProjectElement extends Element {
           <ProjectCard />
           <ProjectCard />
         </div>
-        <a class="btn btn-outline-info" href="/submitProject" role="button">
+        <a class="btn btn-outline-info" href="/ProjectsPage" role="button">
           Ver mais projetos
         </a>
       </div>

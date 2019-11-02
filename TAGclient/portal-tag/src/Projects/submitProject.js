@@ -6,11 +6,18 @@ class submitProject extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      title: null,
+      linkProject: null,
+      category: null,
+      description: null,
       file: null,
       participants: []
     };
 
     this.imgChange = this.imgChange.bind(this);
+    this.addParticipant = this.addParticipant.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
   }
 
   imgChange(event) {
