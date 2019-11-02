@@ -65,7 +65,7 @@ class submitProject extends Component {
       method: 'POST',
       body: data
     }).then(response => console.log(response))
-
+    window.location.href = "/ProjectsPage"
   }
 
   render() {
