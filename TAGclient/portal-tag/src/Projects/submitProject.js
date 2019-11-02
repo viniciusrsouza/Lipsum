@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import "./submitProject.css";
 import logo from "../images/logo2.png";
+import { post, endpoints } from "../network/http-methods";
 
 class submitProject extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: null,
-      linkProject: null,
-      category: null,
-      description: null,
-      file: null,
+      titulo: null,
+      link_projeto: null,
+      categoria: null,
+      descricao: null,
+      imagem: null,
       participants: []
     };
 
@@ -18,11 +19,13 @@ class submitProject extends Component {
     this.addParticipant = this.addParticipant.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
+    this.publish = this.publish.bind(this);
+    this.updateFields = this.updateFields.bind(this);
   }
 
   imgChange(event) {
     this.setState({
-      file: URL.createObjectURL(event.target.files[0])
+      imagem: event.target.files[0]
     });
   }
 
@@ -38,6 +41,31 @@ class submitProject extends Component {
   handleRemove(index) {
     this.state.participants.splice(index, 1);
     this.setState({ participants: this.state.participants });
+  }
+
+  async updateFields(){
+    this.setState({
+      titulo: document.getElementById("title").value,
+      link_projeto: document.getElementById("article-link").value,
+      categoria: document.getElementById("exampleFormControlSelect1").value,
+      descricao: document.getElementById("exampleFormControlTextarea1").value
+    })
+  }
+
+  async publish(){
+    await this.updateFields()
+    console.log(this.state)
+    let data = new FormData()
+    data.append('titulo', this.state.titulo)
+    data.append('link_projeto', this.state.link_projeto)
+    data.append('categoria', this.state.categoria)
+    data.append('descricao', this.state.descricao)
+    data.append('imagem', this.state.imagem)
+    fetch(endpoints.projects, {
+      method: 'POST',
+      body: data
+    }).then(response => console.log(response))
+
   }
 
   render() {
@@ -80,7 +108,7 @@ class submitProject extends Component {
                 <input
                   type="text"
                   class="form-control"
-                  id="articleLink"
+                  id="article-link"
                   placeholder="Link do artigo (opcional)"
                 ></input>
               </div>
@@ -160,7 +188,7 @@ class submitProject extends Component {
               </div>
             </div>
             <div class="form-group">
-              <button class="btn btn-primary btn-block">
+              <button class="btn btn-primary btn-block" type="button" onClick={this.publish}>
                 Registrar projeto
               </button>
             </div>

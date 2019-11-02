@@ -2,6 +2,7 @@ export const root = "http://127.0.0.1:8000"
 export const endpoints = {
     login:`${root}/login/`,
     users:`${root}/Usuario/`,
+    projects:`${root}/Projeto/`,
 }
 
 export async function get(url, params, callback, errorCallback){
