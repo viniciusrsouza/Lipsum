@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link, animateScroll as scroller } from "react-scroll";
 import "./NavBar.css";
-import { signout } from "../utils";
+import { signout, getUser } from "../utils";
 import logo from "../images/logo2.png";
 
 class NavBar extends Component {
@@ -14,8 +14,13 @@ class NavBar extends Component {
   }
 
   render() {
-    let session = this.props.session;
-    console.log(session!==undefined);
+    const currentUser = getUser();
+    console.log(currentUser)
+    let session
+    if(currentUser)
+      session = currentUser.nome
+    else session = undefined
+    
     const tag = session!==undefined ? (
       <p>
         Olá, {`${session}`}

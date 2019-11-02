@@ -12,16 +12,9 @@ import ContactElement from "./components/elements/ContactElement";
 import { getUser } from "./utils";
 
 function App() {
-  const currentUser = getUser();
-  console.log(currentUser)
-  let session
-  if(currentUser)
-    session = currentUser.nome
-  else session = undefined
-  console.log(session)
   return (
     <div className="App">
-      <Body session={session} />
+      <Body/>
     </div>
   );
 }
@@ -34,7 +27,7 @@ function App() {
 function Body(props) {
   return (
     <div className="Body">
-      <NavBar session={props.session} />
+      <NavBar/>
       <Element id="news">
         <News />
       </Element>
