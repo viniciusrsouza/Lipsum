@@ -1,27 +1,26 @@
 import React, { Component } from "react";
 import NavBar from "../components/NavBar";
-import ReactDOM from 'react-dom'
+import ReactDOM from "react-dom";
 import "./ProjectsPage.css";
 import { get, endpoints } from "../network/http-methods";
+import UserModal from "../User/userModal";
 
 class ProjectsPage extends Component {
   constructor(props) {
     super(props);
-    console.log("teste")
-    console.log(ReactDOM)
+    console.log("teste");
+    console.log(ReactDOM);
     get(endpoints.projects, {}, response => {
-      console.log(response)
+      console.log(response);
       this.setState({
         projects: response
-      })
-      const node = ReactDOM.
-      document.getElementById('projects').appendChild(
-      )
-    })
+      });
+      const node = ReactDOM.document.getElementById("projects").appendChild();
+    });
   }
 
   renderTableData() {
-    if(this.state){
+    if (this.state) {
       return this.state.projects.map((project, index) => {
         const { id, titulo, categoria, data_publicacao } = project;
         return (
@@ -40,7 +39,7 @@ class ProjectsPage extends Component {
   }
 
   renderTableHeader() {
-    const header = ['id', 'titulo', 'categoria', 'data_publicacao']
+    const header = ["id", "titulo", "categoria", "data_publicacao"];
     return header.map((key, index) => {
       return (
         <th scope="col" key={index}>
@@ -50,13 +49,30 @@ class ProjectsPage extends Component {
     });
   }
 
+  showModal() {
+    //Deve chamar o componente UserModal, chamando também o método handleShow,
+    //que nem faz o botão comentado no componente
+    console.log("funciona");
+  }
+
   render() {
     return (
       <div>
         <NavBar></NavBar>
         <div class="tabela">
           <div class="tabelaTitle">
-            <h2>Projetos</h2>
+            <div>
+              <h2 class="d-inline">
+                Projetos{" "}
+                <span
+                  role="button"
+                  class="btn btn-outline-primary btn-sm rounded-circle"
+                  onClick={this.showModal}
+                >
+                  +
+                </span>
+              </h2>
+            </div>
             <a
               id="publicar"
               role="button"
@@ -65,14 +81,15 @@ class ProjectsPage extends Component {
             >
               Publicar Projeto
             </a>
+            <UserModal />
           </div>
           <div id="projects">
-          <table class="table table-striped" id="projects">  
-            <thead>
-              <tr>{this.renderTableHeader()}</tr>
-            </thead>
-            <tbody>{this.renderTableData()}</tbody>
-          </table>
+            <table class="table table-striped" id="projects">
+              <thead>
+                <tr>{this.renderTableHeader()}</tr>
+              </thead>
+              <tbody>{this.renderTableData()}</tbody>
+            </table>
           </div>
         </div>
       </div>
