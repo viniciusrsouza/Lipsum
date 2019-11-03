@@ -3,18 +3,18 @@ import NavBar from "../components/NavBar";
 import "./PageProject.css";
 import image from "../images/bg-4.jpg";
 import { get, endpoints } from "../network/http-methods";
-import { withRouter } from 'react-router-dom';
+import { withRouter } from "react-router-dom";
 
 class PageProject extends Component {
   constructor(props) {
     super(props);
-    const id = this.props.match.params.projectId
-    console.log("id=",id)
-    get(endpoints.projects, {id: id}, (response) =>{
-      console.log(response)
-      const project = response.find(element => element.id == id)
-      this.setState({project: project})
-    })
+    const id = this.props.match.params.projectId;
+    console.log("id=", id);
+    get(endpoints.projects, { id: id }, response => {
+      console.log(response);
+      const project = response.find(element => element.id == id);
+      this.setState({ project: project });
+    });
     this.state = {
       project: {
         id: 2,
@@ -28,7 +28,7 @@ class PageProject extends Component {
         data_publicacao: "29/10/2019",
         imagem: ""
       }
-    }
+    };
   }
 
   render() {
@@ -64,7 +64,9 @@ class PageProject extends Component {
         <div id="link">
           <p class="text-muted">
             Link de publicação do projeto:{" "}
-            <a href={this.state.project.link_projeto}>{this.state.project.link_projeto}</a>
+            <a href={this.state.project.link_projeto}>
+              {this.state.project.link_projeto}
+            </a>
           </p>
         </div>
       </div>
