@@ -3,7 +3,9 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import logo from "../images/logo2.png";
 
-class UserModal extends Component {
+export var callModal;
+
+export class UserModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,22 +27,28 @@ class UserModal extends Component {
 
     this.handleClose = this.handleClose.bind(this);
     this.handleShow = this.handleShow.bind(this);
+
+    this.handleShow()
+    
+    callModal = (user) => { 
+      this.handleShow(user)
+    }
   }
 
   handleClose() {
     this.setState({ show: false });
   }
 
-  handleShow() {
-    this.setState({ show: true });
+  handleShow(user) {
+    this.setState({ show: true, user: user });
   }
 
   render() {
     return (
       <>
-        {/* <Button variant="primary" onClick={this.handleShow}>
+        {/*<Button variant="primary" onClick={this.handleShow}>
           Info User
-        </Button> */}
+    </Button>*/}
 
         <Modal show={this.state.show} onHide={this.handleClose} size="lg">
           <Modal.Header closeButton>
@@ -88,5 +96,3 @@ class UserModal extends Component {
     );
   }
 }
-
-export default UserModal;

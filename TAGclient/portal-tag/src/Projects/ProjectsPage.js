@@ -3,24 +3,29 @@ import NavBar from "../components/NavBar";
 import ReactDOM from "react-dom";
 import "./ProjectsPage.css";
 import { get, endpoints } from "../network/http-methods";
-import UserModal from "../User/userModal";
+import { UserModal, callModal } from "../User/userModal";
+import { getUserFromEmail } from "../utils";
 
 class ProjectsPage extends Component {
   constructor(props) {
     super(props);
     console.log("teste");
     console.log(ReactDOM);
+    this.state = {
+      modal: undefined
+    }
     get(endpoints.projects, {}, response => {
       console.log(response);
       this.setState({
         projects: response
       });
-      const node = ReactDOM.document.getElementById("projects").appendChild();
     });
+
+    this.showModal = this.showModal.bind(this)
   }
 
   renderTableData() {
-    if (this.state) {
+    if (this.state.projects) {
       return this.state.projects.map((project, index) => {
         const { id, titulo, categoria, data_publicacao } = project;
         return (
@@ -49,10 +54,11 @@ class ProjectsPage extends Component {
     });
   }
 
-  showModal() {
-    //Deve chamar o componente UserModal, chamando também o método handleShow,
-    //que nem faz o botão comentado no componente
+  async showModal() {
     console.log("funciona");
+    getUserFromEmail("admin@admin.com", user =>{
+      callModal(user)
+    })
   }
 
   render() {
@@ -81,7 +87,9 @@ class ProjectsPage extends Component {
             >
               Publicar Projeto
             </a>
-            <UserModal />
+            <div>
+              <UserModal/>
+            </div>
           </div>
           <div id="projects">
             <table class="table table-striped" id="projects">

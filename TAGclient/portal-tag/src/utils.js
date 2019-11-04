@@ -25,6 +25,8 @@ export async function authenticate(id, queryId, cb){
 
 export async function signout(cb){
     localStorage.removeItem('session-id')
+    localStorage.removeItem('query-id')
+    localStorage.removeItem('current-user')
     return cb()
 }
 export async function getUserFromSession(session, cb){
@@ -65,4 +67,8 @@ export async function loadUser(){
 
 export function getUser(){
     return JSON.parse(localStorage.getItem('current-user'))
+}
+
+export async function getUserFromEmail(email, callback){
+    return get(endpoints.users, {email: email}, callback)
 }
