@@ -55,10 +55,24 @@ class ProjectsPage extends Component {
   }
 
   async showModal() {
+    const user = {
+      nome: "Mateus Lins e Silva Duque de Barros",
+      email: "mateuslins02@gmail.com",
+      afiliação: "AIbox Lab",
+      departamento: "Iniciação Científica",
+      formação:
+        "Bacharelado em Ciência da Computação pela Universidade Federal Rural de Pernambuco",
+      linkLattes: "http://google.com",
+      produções: [
+        "Aplicabilidade e Impactos quanto a Adoção de Modelos de Classificação como Mecanismos Anti-Phishing",
+        "Adoption of Feature Selection as Anti-Phishing Mechanism: Applicability and Impacts"
+      ]
+    }
+    callModal(user)
     console.log("funciona");
-    getUserFromEmail("admin@admin.com", user =>{
-      callModal(user)
-    })
+    //getUserFromEmail("admin@admin.com", user =>{
+      //callModal(user)
+    //})
   }
 
   render() {
