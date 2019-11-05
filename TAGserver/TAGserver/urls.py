@@ -18,9 +18,12 @@ from django.urls import include, path
 from rest_framework import routers
 from portalAPP import views
 from rest_framework.authtoken.views import obtain_auth_token
+from django.conf import settings
+from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
 router.register(r'Usuario', views.UsuarioViewSet)
+router.register(r'Projeto', views.ProjetoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,3 +31,6 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('login/', obtain_auth_token, name='api_token_auth') #login
 ]
+
+if settings.DEBUG: # new
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
